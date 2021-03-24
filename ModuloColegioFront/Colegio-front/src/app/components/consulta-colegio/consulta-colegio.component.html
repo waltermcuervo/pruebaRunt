@@ -1,0 +1,43 @@
+<mat-card color="accent">
+    <h3> CONSULTAR DATOS COLEGIO</h3>
+</mat-card>
+<br>
+<mat-divider class="mat-p-initial"></mat-divider>
+<br>
+<mat-card-content>
+    <mat-toolbar color="primary">
+        <strong class="strong">Filtro por Docente</strong>
+    </mat-toolbar>
+    <br><br>
+    <div class="contenedor">
+    <form [formGroup]="formColegio">
+    <div>
+        <mat-form-field class="docente" appearance="fill">
+            <mat-label>Seleccione un Docente</mat-label>
+            <mat-select formControlName="docente">
+                <mat-option *ngFor="let docente of listaDocentes" [value]="docente">
+                    {{docente.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <!--
+    <div >
+        <mat-form-field class="materia" appearance="fill">
+            <mat-label>Seleccione una materia</mat-label>
+            <mat-select formControlName="materias">
+                <mat-option *ngFor="let docente of listaDocentes" [value]="docente">
+                    {{docente.nombre}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    -->
+    </form>
+    </div>
+    <br><br>
+        <app-tabla [inputData]="dataSource"></app-tabla>
+    <br>
+    <br><br>
+    <div class="mat-jc-center mat-d-flex">
+    <button mat-raised-button color="warn" (click)="buscar()" [disabled]="formColegio.invalid" >Consultar</button>
+    </div>
+</mat-card-content>

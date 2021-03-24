@@ -1,0 +1,42 @@
+<div class="contenedorTabla">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z1">
+        <ng-container matColumnDef="idcurso">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Id Curso </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.idCurso}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombreCusro">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Nombre Curso </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.nombreCurso}} </td>
+        </ng-container>    
+        <ng-container matColumnDef="idEstudiante">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> id Estudiante </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.idEstudiante}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombreEstudiante">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Nombre Estudiante </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.nombreEstudiante}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="idAsignatura">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Id Asignatura </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.idAsignatura}} </td>
+        </ng-container>    
+        <ng-container matColumnDef="nombreAsignatura">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Nombre Asignatura </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.nombreAsignatura}} </td>
+        </ng-container>
+        <ng-container matColumnDef="idProfe">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Id Profe </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.idProfesor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombreProfe">
+            <th mat-header-cell class="cell-table-style" *matHeaderCellDef> Nombre Profe </th>
+            <td mat-cell class="row-table-style" *matCellDef="let data"> {{data?.nombreProfesor}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnasMostradas"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnasMostradas;"></tr>
+    </table>
+</div>
