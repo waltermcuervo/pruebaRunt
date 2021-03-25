@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class ConsultarService {
   private BASE_URL: string = "http://localhost:8080";
   private CONSULTAR_DOCENTES: string = this.BASE_URL + '/obtenerDocentes';
-  private CONSULTAR_ESTUDIANTES: string = this.BASE_URL + '/consultarAsignaturas';
+  private CONSULTAR_ESTUDIANTES: string = this.BASE_URL + '/ConsultaAsignaturas';
 
   constructor(private httpHelperService: HttpHelperService,
     private http: HttpClient) { }
@@ -36,7 +36,7 @@ export class ConsultarService {
 
   getAsignaturas(idProfe: number): Observable<any[]>{
     const params  = new HttpParams()
-    .set('idProfesor', idProfe.toString());
+    .set('id', idProfe.toString());
     return this.getServiceObservableParams(this.CONSULTAR_ESTUDIANTES, params);
   }
 

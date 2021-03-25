@@ -42,7 +42,7 @@ export class ConsultaColegioComponent implements OnInit {
     })
   }
 
-  /**
+ /**
    * metodo que llama al servicio de obtener las asignaturas
    * @param id identificador del docente, se toma del formulario
    */
@@ -61,7 +61,7 @@ export class ConsultaColegioComponent implements OnInit {
   public buscar(): void{
     let profesor = this.formColegio.value.docente;
     console.log(profesor);
-    this.getAsignaturas(profesor.id);
+    this.getAsignaturas(profesor.idProfesor);
   }
 
 }
